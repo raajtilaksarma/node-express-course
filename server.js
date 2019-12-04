@@ -7,11 +7,12 @@ const mockUserData=[
     ]
 
 app.get('/users', function(req,res){
-        res.json({
-            success: true,
-            message: 'successfully got users. Nice!',
-            users: mockUserData
-        })
+    console.log(req.params.id)
+    res.json({
+        success: true,
+        message: 'got one user',
+        users: req.params.id
+    })
 })
 
 app.listen(8000,function(){
